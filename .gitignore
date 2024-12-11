@@ -1,0 +1,5 @@
+#ignore the node files
+node_modules
+
+#ignore allure reports
+allure-results

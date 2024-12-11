@@ -1,0 +1,15 @@
+{
+  "name": "WebdriverIO_Mocha",
+  "type": "module",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.2.14",
+    "@wdio/cli": "^9.4.1",
+    "@wdio/local-runner": "^9.4.1",
+    "@wdio/mocha-framework": "^9.2.8"
+  },
+  "scripts": {
+    "wdio": "wdio run ./wdio.conf.js",
+    "generateAllureReport": "allure generate ./reports/video-reports/allure-raw -o ./reports/video-reports/allure-report --clean && allure open ./reports/video-reports/allure-report",
+    "allurereport:ci": "allure generate ./reports/video-reports/allure-raw -o ./reports/video-reports/allure-report --clean"
+  }
+}
