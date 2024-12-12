@@ -7,19 +7,19 @@ class LoginPage {
     /**
      * define selectors using getter methods
      */
-    get inputUsername () {
+    get inputUsername() {
         return $('#user-name');
     }
 
-    get inputPassword () {
+    get inputPassword() {
         return $('#password');
     }
 
-    get btnSubmit () {
+    get btnSubmit() {
         return $('//input[@id="login-button"]');
     }
 
-    get errorMessage(){
+    get errorMessage() {
         return $("//div[@class='error-message-container error']")
     }
 
@@ -27,7 +27,7 @@ class LoginPage {
      * a method to encapsule automation code to interact with the page
      * e.g. to login using username and password
      */
-    async login (username, password) {
+    async login(username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
         await this.btnSubmit.click();
