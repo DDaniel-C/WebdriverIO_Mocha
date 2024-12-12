@@ -13,6 +13,8 @@ jobs:
           run: npm install
         - name: Test
           run: npm run wdio
+        - name: Allure Report
+          run: npm run generateAllureReport
         - uses: actions/upload-artifact@v4
           if: failure()
           with:
