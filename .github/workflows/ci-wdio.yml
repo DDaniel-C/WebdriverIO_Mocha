@@ -5,16 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - name: Checkout
-          uses: actions/checkout@v2
-        - name: Install Chromium
-          run: sudo apt-get install chromium-browser
-        - uses: actions/setup-node@v1
+          uses: actions/checkout@v4
+        - uses: actions/setup-node@v4
           with:
-            node-version: 20
+            node-version: 18
         - name: Install
           run: npm install
         - name: Test
-          run: npm run wdio
+          run: npm run test:local
         - uses: actions/upload-artifact@v4
           if: failure()
           with:

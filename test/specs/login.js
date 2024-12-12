@@ -3,14 +3,8 @@ import LoginPage from '../pageobjects/login.page.js'
 
 describe('Login Page', () => {
 
-    var testcounter = 0
     beforeEach(async () => {
-        testcounter++
         await browser.url('https://www.saucedemo.com/')
-    })
-
-    after(async () => {
-        console.log("Test counter: " + testcounter)
     })
 
     it('should login with valid credentials', async () => {
