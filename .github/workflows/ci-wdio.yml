@@ -14,6 +14,7 @@ jobs:
         - name: Test
           run: npm run wdio
         - name: Allure Report
+          run: npm install -g allure-commandline --save-dev 
           run: npm run generateAllureReport
         - uses: actions/upload-artifact@v4
           if: failure()
