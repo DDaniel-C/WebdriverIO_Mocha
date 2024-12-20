@@ -1,6 +1,6 @@
 import { browser, expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
-import productPage from '../pageobjects/inventory.page.js'
+import productPage from '../pageobjects/product.page.js'
 
 describe('Sorting out the products', () => {
 

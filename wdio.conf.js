@@ -21,8 +21,14 @@ export const config = {
     // of the config file unless it's absolute.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/specs/**/*.js',
+        './test/specs/E2E/*.spec.js'
     ],
+    suites: {
+        E2E: [
+            './test/specs/Checkout.spec.js',
+        ]
+    },
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -51,10 +57,10 @@ export const config = {
     //
     capabilities: [{
         browserName: 'chrome'
-    // }, {
-    //     browserName: 'firefox'
-    // }, {
-    //     browserName: 'MicrosoftEdge'
+        // }, {
+        //     browserName: 'firefox'
+        // }, {
+        //     browserName: 'MicrosoftEdge'
     }],
 
     //
@@ -113,7 +119,7 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -129,14 +135,14 @@ export const config = {
     // see also: https://webdriver.io/docs/dot-reporter
     reporters: [
         [
-          'allure',
-          {
-            outputDir: 'allure-results',
-            disableWebdriverStepsReporting: false,
-            disableWebdriverScreenshotsReporting: false,
-          },
+            'allure',
+            {
+                outputDir: 'allure-results',
+                disableWebdriverStepsReporting: false,
+                disableWebdriverScreenshotsReporting: false,
+            },
         ],
-      ],
+    ],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -239,7 +245,7 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    afterTest: async function(test, context, { error, result, duration, passed, retries }) {
+    afterTest: async function (test, context, { error, result, duration, passed, retries }) {
         if (!passed) {
             await browser.takeScreenshot();
         }

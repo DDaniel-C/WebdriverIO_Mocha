@@ -1,10 +1,10 @@
 import { browser, expect } from '@wdio/globals'
-import LoginPage from '../pageobjects/login.page.js'
-import productPage from '../pageobjects/product.page.js'
-import cartPage from '../pageobjects/cart.page.js'
-import testData from "../Data/testData.json" assert { "type": "json" }
+import LoginPage from '../../pageobjects/login.page.js'
+import productPage from '../../pageobjects/product.page.js'
+import cartPage from '../../pageobjects/cart.page.js'
+import testData from "../../Data/testData.json" assert { "type": "json" }
 
-describe('Adding and removing products from products page', () => {
+describe('Checking out', () => {
 
     beforeEach(async () => {
         await browser.url('https://www.saucedemo.com/')
@@ -32,7 +32,7 @@ describe('Adding and removing products from products page', () => {
         await expect(cartPage.thankYouMessage).toHaveText([expect.stringContaining('Thank you for your order!')])
     })
 
-    it('Error message on checkout: Name is required1', async () => {
+    it('Error message on checkout: Name is required', async () => {
         await expect(productPage.cartIconCounter).not.toBeDisplayed()
         await productPage.addFirstItemToCart.click()
         await expect(productPage.cartIconCounter).toBeDisplayed()
