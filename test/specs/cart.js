@@ -1,6 +1,6 @@
 import { browser, expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page.js'
-import productPage from '../pageobjects/inventory.page.js'
+import productPage from '../pageobjects/product.page.js'
 
 describe('Adding and removing products from products page', () => {
 
@@ -11,7 +11,7 @@ describe('Adding and removing products from products page', () => {
         await LoginPage.btnSubmit.click()
     })
     
-    it('add product to cart then remove it', async () => {
+    it('add product to cart then remove it from producst page', async () => {
         await expect(productPage.cartIconCounter).not.toBeDisplayed()
         await productPage.addFirstItemToCart.click()
         await expect(productPage.cartIconCounter).toBeDisplayed()
@@ -21,7 +21,7 @@ describe('Adding and removing products from products page', () => {
         await expect(productPage.cartIconCounter).not.toBeDisplayed()
     })
 
-    it('adding and verifying multiple products are in cart icon', async () => {
+    it('adding and verifying multiple products are in cart icon from products page', async () => {
         await expect(productPage.cartIconCounter).not.toBeDisplayed()
         await productPage.addFirstItemToCart.click()
         await productPage.addSecondItemToCart.click()

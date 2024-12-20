@@ -36,6 +36,10 @@ class productPage {
     get cartIconCounter(){
         return $("//span[@class='shopping_cart_badge']")
     }
+
+    get cart(){
+        return $("//a[@class='shopping_cart_link']")
+    }
 }
 
 export default new productPage();
