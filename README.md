@@ -1,6 +1,6 @@
 # WebdriverIO Mocha Project
 
-[![Build Status](https://travis-ci.org/your-username/your-repo-name.svg?branch=master)](https://travis-ci.org/your-username/your-repo-name)
+![Build Status](https://github.com/DDaniel-C/WebdriverIO_Mocha/actions/workflows/ci-wdio.yml/badge.svg)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
