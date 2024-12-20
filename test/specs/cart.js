@@ -6,9 +6,7 @@ describe('Adding and removing products from products page', () => {
 
     beforeEach(async () => {
         await browser.url('https://www.saucedemo.com/')
-        await LoginPage.inputUsername.setValue('standard_user')
-        await LoginPage.inputPassword.setValue('secret_sauce')
-        await LoginPage.btnSubmit.click()
+        await LoginPage.login('standard_user', 'secret_sauce')
     })
     
     it('add product to cart then remove it from producst page', async () => {

@@ -9,9 +9,7 @@ describe('Login Page', () => {
 
     it('should login with valid credentials', async () => {
         await browser.pause(1000)
-        await LoginPage.inputUsername.setValue('standard_user')
-        await LoginPage.inputPassword.setValue('secret_sauce')
-        await LoginPage.btnSubmit.click()
+        await LoginPage.login('standard_user', 'secret_sauce')
     })
 
     it('should not login with invalid credentials', async () => {

@@ -33,13 +33,33 @@ class productPage {
         return $("(//button[contains(@class, 'btn_inventory')])[6]")
     }
 
-    get cartIconCounter(){
+    get cartIconCounter() {
         return $("//span[@class='shopping_cart_badge']")
     }
 
-    get cart(){
+    get cart() {
         return $("//a[@class='shopping_cart_link']")
     }
+
+    get comparePrices() {
+        async function comparePrices(operator) {
+          const firstPriceText = await this.firstPrice.getText()
+          const firstPrice = parseInt(firstPriceText.replace('$', ''), 10)
+          const lastPriceText = await this.lastPrice.getText()
+          const lastPrice = parseInt(lastPriceText.replace('$', ''), 10)
+          switch (operator) {
+            case 'lt': // less than
+              return firstPrice < lastPrice;
+            case 'gt': // greater than
+              return firstPrice > lastPrice;
+            case 'eq': // equal
+              return firstPrice === lastPrice;
+            default:
+              throw new Error(`Unsupported operator: ${operator}`);
+          }
+        }
+        return comparePrices;
+      }
 }
 
 export default new productPage();
