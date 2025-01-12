@@ -34,7 +34,7 @@ This project uses WebdriverIO and Mocha to automate end-to-end tests for a web a
 
 ### Installation
 
-1. Clone the repository: `git clone https://github.com/your-username/your-repo-name.git`
+1. Clone the repository: `git clone https://github.com/DDaniel-C/WebdriverIO_Mocha.git`
 2. Install dependencies: `npm install`
 3. Update the `wdio.conf.js` file with your desired test settings
 
